@@ -19,32 +19,15 @@
 
 package uk.co.caprica.vlcj.factory.swt;
 
-import org.eclipse.swt.widgets.Composite;
-import uk.co.caprica.vlcj.player.embedded.videosurface.VideoSurfaceAdapters;
-import uk.co.caprica.vlcj.player.embedded.videosurface.swt.CompositeVideoSurface;
+abstract class BaseApi {
 
-/**
- *
- */
-public final class SwtService extends BaseService {
+    protected final SwtMediaPlayerFactory factory;
 
-    /**
-     *
-     *
-     * @param mediaPlayerFactory
-     */
-    public SwtService(SwtMediaPlayerFactory mediaPlayerFactory) {
-        super(mediaPlayerFactory);
+    BaseApi(SwtMediaPlayerFactory factory) {
+        this.factory  = factory;
     }
 
-    /**
-     *
-     *
-     * @param composite
-     * @return
-     */
-    public CompositeVideoSurface newCompositeVideoSurface(Composite composite) {
-        return new CompositeVideoSurface(composite, VideoSurfaceAdapters.getVideoSurfaceAdapter());
+    protected void release() {
     }
 
 }

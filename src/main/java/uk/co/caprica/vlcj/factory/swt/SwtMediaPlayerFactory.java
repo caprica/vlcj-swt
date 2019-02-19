@@ -31,12 +31,12 @@ import java.util.Collection;
  */
 public class SwtMediaPlayerFactory extends MediaPlayerFactory {
 
-    private final SwtService swtService;
+    private final SwtApi swtApi;
 
     public SwtMediaPlayerFactory(NativeDiscovery discovery, String... libvlcArgs) {
         super(discovery, libvlcArgs);
 
-        this.swtService = new SwtService(this);
+        this.swtApi = new SwtApi(this);
     }
 
     public SwtMediaPlayerFactory(String... libvlcArgs) {
@@ -56,13 +56,13 @@ public class SwtMediaPlayerFactory extends MediaPlayerFactory {
      *
      * @return
      */
-    public final SwtService swt() {
-        return swtService;
+    public final SwtApi swt() {
+        return swtApi;
     }
 
     @Override
     public void onBeforeRelease() {
-        swtService.release();
+        swtApi.release();
     }
 
 }
