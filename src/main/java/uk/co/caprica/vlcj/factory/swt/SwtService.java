@@ -20,7 +20,7 @@
 package uk.co.caprica.vlcj.factory.swt;
 
 import org.eclipse.swt.widgets.Composite;
-import uk.co.caprica.vlcj.player.embedded.videosurface.linux.LinuxVideoSurfaceAdapter;
+import uk.co.caprica.vlcj.player.embedded.videosurface.VideoSurfaceAdapters;
 import uk.co.caprica.vlcj.player.embedded.videosurface.swt.CompositeVideoSurface;
 
 /**
@@ -44,8 +44,7 @@ public final class SwtService extends BaseService {
      * @return
      */
     public CompositeVideoSurface newCompositeVideoSurface(Composite composite) {
-        // FIXME adapter per OS
-        return new CompositeVideoSurface(composite, new LinuxVideoSurfaceAdapter());
+        return new CompositeVideoSurface(composite, VideoSurfaceAdapters.getVideoSurfaceAdapter());
     }
 
 }

@@ -19,10 +19,12 @@
 
 package uk.co.caprica.vlcj.factory.swt;
 
-import uk.co.caprica.vlcj.discovery.NativeDiscovery;
+import uk.co.caprica.vlcj.factory.discovery.NativeDiscovery;
 import uk.co.caprica.vlcj.factory.MediaPlayerFactory;
 
 import java.util.Collection;
+
+// FIXME should we build an SwtEmbeddedMediaPlayerComponent that extends Composite, similar to how we extend JPanel for SWT?
 
 /**
  * Extension to the default {@link MediaPlayerFactory} that provides SWT components.
