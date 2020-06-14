@@ -47,8 +47,8 @@ public class CompositeVideoSurface extends VideoSurface {
     }
 
     @Override
-    public void attach(LibVlc libvlc, MediaPlayer mediaPlayer) {
-        videoSurfaceAdapter.attach(libvlc, mediaPlayer, composite.embeddedHandle);
+    public void attach(MediaPlayer mediaPlayer) {
+        videoSurfaceAdapter.attach(mediaPlayer, composite.embeddedHandle);
     }
 
 }
